@@ -10,6 +10,10 @@ import { User } from 'src/models/user.model';
 import { Vacancy } from 'src/models/vacancy.model';
 import { OrganizationController } from './organization.controller';
 import { OrganizationService } from './organization.service';
+import { RoleController } from './role.controller';
+import { RoleService } from './role.service';
+import { VacancyController } from './vacancy.controller';
+import { VacancyService } from './vacancy.service';
 
 @Module({
   imports: [
@@ -24,7 +28,7 @@ import { OrganizationService } from './organization.service';
       Organization
     ])
   ],
-  controllers: [OrganizationController],
-  providers: [OrganizationService]
+  controllers: [OrganizationController, RoleController, VacancyController],
+  providers: [OrganizationService, RoleService, VacancyService]
 })
 export class OrganizationModule {}

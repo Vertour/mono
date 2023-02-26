@@ -3,7 +3,9 @@ import { Table, Column, Model, DataType, ForeignKey, BelongsTo } from 'sequelize
 import { Role } from './role.model';
 import { User } from './user.model';
 
-export interface IVacancyModel extends IVacancy {}
+export interface IVacancyModel extends IVacancy {
+  
+}
 
 @Table({ tableName: 'vacancies' })
 export class Vacancy extends Model<Vacancy> implements IVacancyModel {
@@ -26,6 +28,9 @@ export class Vacancy extends Model<Vacancy> implements IVacancyModel {
   @ForeignKey(() => User)
   @Column({ type: DataType.UUID, allowNull: true, field: 'user_uid' })
   userUid: string;
+
+  @Column({ type: DataType.BOOLEAN, allowNull: false, defaultValue: false })
+  confirmed: boolean
 
   @BelongsTo(() => Role)
   role: Role;

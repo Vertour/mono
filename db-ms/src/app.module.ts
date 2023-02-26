@@ -60,6 +60,6 @@ import { OrganizationModule } from './modules/organization/organization.module';
   ],
   controllers: [AppController],
   providers: [AppService],
-  exports: [ClientsModule]
+  exports: [ClientsModule, SequelizeModule]
 })
 export class AppModule {}

@@ -1,4 +1,4 @@
-import { IImage, IRolePermission } from 'bizdo';
+import { IRolePermission } from 'bizdo';
 import { Table, Column, Model, DataType, ForeignKey, HasMany } from 'sequelize-typescript';
 import { Permission } from './permission-constants.model';
 import { Role } from './role.model';

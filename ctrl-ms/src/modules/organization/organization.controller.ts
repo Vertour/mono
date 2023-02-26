@@ -12,7 +12,7 @@ export class OrganizationController {
   constructor(private readonly organizationService: OrganizationService) {}
 
   @Post('create')
-  async auth(@Body() data: IOrganizationCreate, @Request() { user }): Promise<IOrganization> {
+  async create(@Body() data: IOrganizationCreate, @Request() { user }): Promise<IOrganization> {
     return await this.organizationService.create({ userUid: user.uid, ...data });
   }
 }

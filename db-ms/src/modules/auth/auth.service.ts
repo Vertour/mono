@@ -79,7 +79,7 @@ export class AuthService {
   }
 
   async getAuthToken(uid: string): Promise<string> {
-    const token = uid + '.' + (await bcrypt.hash(await bcrypt.genSalt(), await bcrypt.genSalt()));//remake this shit
+    const token = uid + '.' + (await bcrypt.hash(await bcrypt.genSalt(), await bcrypt.genSalt()));
 
     return token;
   }
